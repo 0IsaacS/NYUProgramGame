@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.layer = 1; //move this to another script later
     }
 
     // Update is called once per frame

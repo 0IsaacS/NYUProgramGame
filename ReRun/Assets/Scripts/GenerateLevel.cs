@@ -11,7 +11,7 @@ public class GenerateLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Generate(2);
+        Generate(10);
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class GenerateLevel : MonoBehaviour
         GameObject last = spawnPlatform; //change later maybe
         for (int i = 0; i < numPieces; i++)
         {
-            last = spawnPiece(last, setpiecePrefabs[Random.Range(0, setpiecePrefabs.Count - 1)]);
+            last = spawnPiece(setpiecePrefabs[Random.Range(0, setpiecePrefabs.Count - 1)], last);
         }
 
         spawnPiece(bossAreaPrefab, last);
