@@ -5,10 +5,10 @@ using UnityEngine;
 public class SetpieceInfo : MonoBehaviour
 {
     //Fields
-    public float xLength, yLength;
+    public float xLength;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
     }
 

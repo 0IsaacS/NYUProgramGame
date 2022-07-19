@@ -25,7 +25,7 @@ public class GenerateLevel : MonoBehaviour
         GameObject last = spawnPlatform; //change later maybe
         for (int i = 0; i < numPieces; i++)
         {
-            last = spawnPiece(setpiecePrefabs[Random.Range(0, setpiecePrefabs.Count - 1)], last);
+            last = spawnPiece(setpiecePrefabs[Random.Range(0, setpiecePrefabs.Count)], last);
         }
 
         spawnPiece(bossAreaPrefab, last);
@@ -38,6 +38,6 @@ public class GenerateLevel : MonoBehaviour
         SetpieceInfo lastInfo = lastPiece.GetComponent<SetpieceInfo>();
         SetpieceInfo spawnInfo = pieceToSpawn.GetComponent<SetpieceInfo>();
 
-        return Instantiate(pieceToSpawn, lastPos + new Vector2(lastInfo.xLength / 2 + spawnInfo.xLength / 2 + Random.Range(1f, 5f), Random.Range(-5f, 5f)), Quaternion.identity);
+        return Instantiate(pieceToSpawn, lastPos + new Vector2(lastInfo.xLength / 2 + spawnInfo.xLength / 2 + Random.Range(2f, 7f), Random.Range(-3f, 3f)), Quaternion.identity);
     }
 }

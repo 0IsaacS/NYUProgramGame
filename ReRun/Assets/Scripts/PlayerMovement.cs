@@ -7,11 +7,13 @@ public class PlayerMovement : MonoBehaviour
     //Fields
     private float moveMult = 3f, duration = 20f;
     [SerializeField] private Transform player;
-    private bool onGround;
+    [SerializeField] private bool onGround;
+    private bool facingRight;
 
     // Start is called before the first frame update
     void Start()
     {
+        facingRight = true;
         gameObject.layer = 1; //move this to another script later
     }
 
@@ -21,17 +23,19 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             StartCoroutine(move(Vector3.right));
-            if (GetComponent<SpriteRenderer>().flipX)
+            if (!facingRight)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                transform.Rotate(new Vector3(0, 180, 0));
+                facingRight = true;
             }
         }
         if (Input.GetKey(KeyCode.A))
         {
             StartCoroutine(move(Vector3.left));
-            if (!GetComponent<SpriteRenderer>().flipX)
+            if (facingRight)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                transform.Rotate(new Vector3(0, 180, 0));
+                facingRight = false;
             }
         }
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
@@ -54,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "ground")
         {
             onGround = true;
