@@ -28,10 +28,30 @@ public class FireWeapon : MonoBehaviour
 
     IEnumerator fire()
     {
+        float waitLength = 0;
+        bool term = false;
+        foreach (AnimationClip clip in playerAnimator.runtimeAnimatorController.animationClips)
+        {
+            switch (clip.name)
+            {
+                case "Mag_Attack":
+                    waitLength = clip.length;
+                    term = !term;
+                    break;
+                default:
+                    break;
+            }
+            if (term)
+            {
+                break;
+            }
+        }
+
         playerAnimator.SetBool("isAttacking", true);
         hasFired = true;
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.1f);
         Instantiate(weaponPrefab, firePoint.position, player.transform.rotation);
+        yield return new WaitForSeconds(waitLength - 0.1f);
         hasFired = false;
         playerAnimator.SetBool("isAttacking", false);
     }

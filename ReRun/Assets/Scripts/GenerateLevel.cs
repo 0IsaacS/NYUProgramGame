@@ -7,11 +7,13 @@ public class GenerateLevel : MonoBehaviour
     //Fields
     public List<GameObject> setpiecePrefabs;
     public GameObject spawnPlatform, bossAreaPrefab;
+    public int piecesToGenerate;
 
     // Start is called before the first frame update
     void Start()
     {
-        Generate(10);
+        piecesToGenerate = 10; //for testing and stuff
+        Generate(piecesToGenerate);
     }
 
     // Update is called once per frame
