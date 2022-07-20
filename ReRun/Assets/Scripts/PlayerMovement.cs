@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     private void jump()
     {
         onGround = false;
-        GetComponent<Rigidbody2D>().AddForce(Vector3.up * 10, ForceMode2D.Impulse);
+        GetComponent<Rigidbody2D>().AddForce(Vector3.up * 7, ForceMode2D.Impulse);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -6,26 +6,33 @@ public class FireWeapon : MonoBehaviour
 {
     //Fields
     public GameObject weaponPrefab;
-    private float velo = 10f;
+    public Animator playerAnimator;
     [SerializeField] private Transform firePoint;
+    public PlayerControl player;
+    public bool hasFired;
 
     // Start is called before the first frame update
     void Start()
     {
+        hasFired = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && !hasFired)
         {
-            fire();
+            StartCoroutine(fire());
         }
     }
 
-    private void fire()
+    IEnumerator fire()
     {
-        GameObject make = Instantiate(weaponPrefab, firePoint.position, Quaternion.identity);
-        make.GetComponent<Rigidbody2D>().velocity = firePoint.up * velo;
+        playerAnimator.SetBool("isAttacking", true);
+        hasFired = true;
+        yield return new WaitForSeconds(0.6f);
+        Instantiate(weaponPrefab, firePoint.position, player.transform.rotation);
+        hasFired = false;
+        playerAnimator.SetBool("isAttacking", false);
     }
 }
