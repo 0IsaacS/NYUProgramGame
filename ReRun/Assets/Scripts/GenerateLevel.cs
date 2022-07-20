@@ -6,7 +6,7 @@ public class GenerateLevel : MonoBehaviour
 {
     //Fields
     public List<GameObject> setpiecePrefabs;
-    public GameObject spawnPlatform, bossAreaPrefab;
+    public GameObject spawnPlatform, bossAreaPrefab, healthUpPrefab;
     public int piecesToGenerate;
 
     // Start is called before the first frame update
@@ -28,6 +28,24 @@ public class GenerateLevel : MonoBehaviour
         for (int i = 0; i < numPieces; i++)
         {
             last = spawnPiece(setpiecePrefabs[Random.Range(0, setpiecePrefabs.Count)], last);
+            SetpieceInfo si = last.GetComponent<SetpieceInfo>();
+            if (Random.Range(0.0f, 1.0f) < 0.25f && !si.hasPowerUp) //1 in 4 chance to sapwn
+            {
+                switch (last.tag)
+                {
+                    case "short":
+                        Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+                        break;
+                    case "tall":
+                        Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
+                        break;
+                    default:
+                        Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, 4, 0), Quaternion.identity);
+                        break;
+                }
+                si.hasPowerUp = true;
+
+            }
         }
 
         spawnPiece(bossAreaPrefab, last);

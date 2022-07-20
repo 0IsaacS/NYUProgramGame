@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 7949500574960084811}
   m_Layer: 0
   m_Name: SetPiece5
-  m_TagString: ground
+  m_TagString: tall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

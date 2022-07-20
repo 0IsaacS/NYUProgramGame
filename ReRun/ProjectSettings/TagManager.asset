@@ -8,6 +8,11 @@ TagManager:
   - Projectile
   - EnemyProjectile
   - GameManager
+  - HealthUp
+  - short
+  - tall
+  - HeartManager
+  - Heart
   layers:
   - Default
   - TransparentFX

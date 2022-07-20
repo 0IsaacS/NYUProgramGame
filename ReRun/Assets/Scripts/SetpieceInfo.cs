@@ -6,6 +6,7 @@ public class SetpieceInfo : MonoBehaviour
 {
     //Fields
     public float xLength;
+    public bool hasPowerUp = false;
 
     // Start is called before the first frame update
     void Awake()
