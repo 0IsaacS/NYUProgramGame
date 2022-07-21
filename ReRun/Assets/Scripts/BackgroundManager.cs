@@ -17,13 +17,16 @@ public class BackgroundManager : MonoBehaviour
     void Update()
     {
 
-        if (player.transform.position.x > transform.position.x + repeatWidth)
+        if (player != null)
         {
-            transform.position = transform.position + new Vector3(repeatWidth, 0, 0);
-        }
-        if (player.transform.position.x < transform.position.x - repeatWidth)
-        {
-            transform.position = transform.position + new Vector3(-repeatWidth, 0, 0);
+            if (player.transform.position.x > transform.position.x + repeatWidth)
+            {
+                transform.position = transform.position + new Vector3(repeatWidth, 0, 0);
+            }
+            if (player.transform.position.x < transform.position.x - repeatWidth)
+            {
+                transform.position = transform.position + new Vector3(-repeatWidth, 0, 0);
+            }
         }
     }
 }

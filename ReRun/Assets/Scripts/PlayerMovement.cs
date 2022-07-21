@@ -44,14 +44,17 @@ public class PlayerMovement : MonoBehaviour
         {
             jump();
         }
-        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
             isWalking = false;
         }
 
-        if (isWalking) {
+        if (isWalking)
+        {
             playerAnimator.SetBool("isWalking", true);
         }
-        else {
+        else
+        {
             playerAnimator.SetBool("isWalking", false);
         }
     }
@@ -71,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "ground")
         {
             onGround = true;

@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6077229697090576618}
   onGround: 0
+  playerAnimator: {fileID: 0}
 --- !u!50 &20431432585063441
 Rigidbody2D:
   serializedVersion: 4
@@ -194,7 +195,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  maxHealth: 5
   gl: {fileID: 0}
+  hUI: {fileID: 0}
+  gameOverScreen: {fileID: 0}
 --- !u!114 &9108556198233224115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,10 +208,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5751451548599310489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67cc71305c468494ebf104b39af46603, type: 3}
+  m_Script: {fileID: 11500000, guid: a72e557f977d41c46963091959a6ec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 10
+  movingSpeed: 0
   player: {fileID: 6077229697090576618}
   onGround: 0
   playerAnimator: {fileID: 6917020916593082404}
@@ -224,10 +228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d1fdb41ed325744a2260323a32192f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 7024448228653594284, guid: 81581cd9a8cfd714eaa788906d13da9e, type: 3}
+  weaponPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerAnimator: {fileID: 6917020916593082404}
   firePoint: {fileID: 2434777945567291954}
-  player: {fileID: 9108556198233224115}
+  player: {fileID: 0}
   hasFired: 0
 --- !u!95 &6917020916593082404
 Animator:
