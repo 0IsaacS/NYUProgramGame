@@ -9,15 +9,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private bool onGround;
     private bool facingRight;
-    private bool isWalking;
+    public bool isWalking;
     public Animator playerAnimator;
     public Stats stats;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = transform;
         facingRight = true;
+        onGround = true;
         gameObject.layer = 1; //move this to another script later
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -62,10 +65,12 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator move(Vector3 dir)
     {
+        Debug.Log("Is moving");
         isWalking = true;
         dir /= moveMult;
-        Vector3 target = player.position + dir;
-        player.position = Vector3.Lerp(player.position, target, duration * Time.deltaTime);
+        Vector3 target = transform.position + dir;
+        Debug.Log(target);
+        transform.position = Vector3.Lerp(transform.position, target, duration*Time.deltaTime);
         yield return null;
     }
     private void jump()
