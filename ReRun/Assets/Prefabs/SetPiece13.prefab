@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: -7712484531345206698}
   m_Layer: 0
   m_Name: SetPiece13
-  m_TagString: short
+  m_TagString: negative
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

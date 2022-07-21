@@ -39,6 +39,9 @@ public class GenerateLevel : MonoBehaviour
                     case "tall":
                         Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
                         break;
+                    case "negative":
+                        Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, -3, 0), Quaternion.identity);
+                        break;
                     default:
                         Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, 4, 0), Quaternion.identity);
                         break;
