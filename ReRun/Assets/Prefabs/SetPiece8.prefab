@@ -204,7 +204,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -8, y: 0, z: 0}
   m_Size: {x: 9, y: 5, z: 1}
-  m_TileAnchor: {x: 4.56, y: -2.11, z: 0}
+  m_TileAnchor: {x: 1.08, y: -0.48, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
@@ -376,3 +376,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xLength: 9.5
+  hasPowerUp: 0
