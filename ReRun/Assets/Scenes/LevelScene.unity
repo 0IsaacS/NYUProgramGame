@@ -567,6 +567,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 852686755}
     - target: {fileID: 7194446914173750945, guid: 246f053c8dbba4b47b0bfd2122f150e5, type: 3}
+      propertyPath: onGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194446914173750945, guid: 246f053c8dbba4b47b0bfd2122f150e5, type: 3}
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 488425411}
@@ -1579,6 +1583,12 @@ MonoBehaviour:
   - {fileID: 1471781001910438679, guid: 6eb4af887b286b141a4431fd883dedb0, type: 3}
   - {fileID: 6076562703357809586, guid: 4aa979c064e0d6845b6bd04d6a2bbbed, type: 3}
   - {fileID: 3650247145412954397, guid: fe87f6f8664e97641a347be4978d50b9, type: 3}
+  - {fileID: 7401754676622415744, guid: 7b0d153738baa4a6ca6c0e946ff29da5, type: 3}
+  - {fileID: 485531542886544880, guid: f02575d67efb942eabe0295bb8ad23c6, type: 3}
+  - {fileID: 401243439598680947, guid: 2d0d2ce40171a4a439abf9dc93fe30c5, type: 3}
+  - {fileID: 5810885294236328931, guid: 5572dcc69357b46bb9ab673b70cde438, type: 3}
+  - {fileID: 4289133539572058064, guid: 02818e688a6184774bea0ce292940ac8, type: 3}
+  - {fileID: 6206924030462326463, guid: be1d91f5875d443b4bd4c424a39a69cb, type: 3}
   spawnPlatform: {fileID: 8789841028104254183}
   bossAreaPrefab: {fileID: 8789841028104254183}
   healthUpPrefab: {fileID: 4898272811603236991, guid: 51ac9c05b7c3de64d96e35a2d0b1b12c, type: 3}
