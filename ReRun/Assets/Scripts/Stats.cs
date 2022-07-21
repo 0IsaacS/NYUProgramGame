@@ -8,6 +8,7 @@ public class Stats : MonoBehaviour
     public int health = 1, maxHealth = 5;
     public GenerateLevel gl;
     public HealthUI hUI;
+    public GameObject gameOverScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class Stats : MonoBehaviour
         }
         if (health <= 0)
         {
-            Destroy(gameObject);
+            die();
         }
     }
     void takeDamage()
@@ -53,5 +54,16 @@ public class Stats : MonoBehaviour
             }
             Destroy(collision.gameObject);
         }
+    }
+    void die()
+    {
+        gameOver();
+        Destroy(gameObject);
+    }
+
+    void gameOver()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 }
