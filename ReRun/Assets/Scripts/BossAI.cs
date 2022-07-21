@@ -21,15 +21,19 @@ public class BossAI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
 
-        if (Mathf.Abs(self.position.x - player.position.x) > 3f && !attacking)
+        if (player.position.x - self.position.x < 10)
         {
-            StartCoroutine(moveToPlayer());
-        }
-        else
-        {
-            attack();
-        }
 
+            if (Mathf.Abs(self.position.x - player.position.x) > 3f && !attacking)
+            {
+                StartCoroutine(moveToPlayer());
+            }
+            else
+            {
+                attack();
+            }
+
+        }
         if (health <= 0)
         {
             Destroy(gameObject);

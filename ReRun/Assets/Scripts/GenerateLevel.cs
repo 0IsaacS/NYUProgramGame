@@ -5,14 +5,14 @@ using UnityEngine;
 public class GenerateLevel : MonoBehaviour
 {
     //Fields
-    public List<GameObject> setpiecePrefabs;
-    public GameObject spawnPlatform, bossAreaPrefab, healthUpPrefab;
+    public List<GameObject> setpiecePrefabs, bossAreaPrefabs;
+    public GameObject spawnPlatform, healthUpPrefab;
     public int piecesToGenerate;
 
     // Start is called before the first frame update
     void Start()
     {
-        piecesToGenerate = 10; //for testing and stuff
+        piecesToGenerate = 3; //for testing and stuff
         Generate(piecesToGenerate);
     }
 
@@ -48,7 +48,7 @@ public class GenerateLevel : MonoBehaviour
             }
         }
 
-        spawnPiece(bossAreaPrefab, last);
+        spawnPiece(bossAreaPrefabs[Random.Range(0, bossAreaPrefabs.Count)], last);
     }
 
     //returns the GameObject of the newly spawned piece and spawns it

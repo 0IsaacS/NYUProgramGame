@@ -1532,8 +1532,10 @@ MonoBehaviour:
   - {fileID: 5810885294236328931, guid: 5572dcc69357b46bb9ab673b70cde438, type: 3}
   - {fileID: 4289133539572058064, guid: 02818e688a6184774bea0ce292940ac8, type: 3}
   - {fileID: 6206924030462326463, guid: be1d91f5875d443b4bd4c424a39a69cb, type: 3}
+  bossAreaPrefabs:
+  - {fileID: 1160346447067324737, guid: 77a4524151f7d4f9a9ff425101cb2891, type: 3}
+  - {fileID: 5310594309719620954, guid: ea96e476b7d644877b471d81e85b4e21, type: 3}
   spawnPlatform: {fileID: 8789841028104254183}
-  bossAreaPrefab: {fileID: 8789841028104254183}
   healthUpPrefab: {fileID: 4898272811603236991, guid: 51ac9c05b7c3de64d96e35a2d0b1b12c, type: 3}
   piecesToGenerate: 0
 --- !u!1001 &1988687400
