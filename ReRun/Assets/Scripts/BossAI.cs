@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossAI : MonoBehaviour
 {
     //Fields
-    public int health = 5;
+    public int health = 20;
     public Transform player, self;
     private bool attacking = false;
     [SerializeField] private EnemyControl ac;
