@@ -1276,6 +1276,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1364083072152692699, guid: cdda581127f364bdfa6ec041945b92ba, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     - target: {fileID: 5851400648996521165, guid: cdda581127f364bdfa6ec041945b92ba, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1323,6 +1327,10 @@ PrefabInstance:
     - target: {fileID: 7162947277099237757, guid: cdda581127f364bdfa6ec041945b92ba, type: 3}
       propertyPath: m_Name
       value: StartPlatfrom2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751262069580785804, guid: cdda581127f364bdfa6ec041945b92ba, type: 3}
+      propertyPath: m_TagString
+      value: ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdda581127f364bdfa6ec041945b92ba, type: 3}
