@@ -135,6 +135,7 @@ MonoBehaviour:
   player: {fileID: 6077229697090576618}
   onGround: 0
   playerAnimator: {fileID: 0}
+  stats: {fileID: -9184587668591715249}
 --- !u!50 &20431432585063441
 Rigidbody2D:
   serializedVersion: 4

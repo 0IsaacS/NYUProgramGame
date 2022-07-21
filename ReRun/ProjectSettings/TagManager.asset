@@ -13,6 +13,7 @@ TagManager:
   - tall
   - HeartManager
   - Heart
+  - spikes
   layers:
   - Default
   - TransparentFX

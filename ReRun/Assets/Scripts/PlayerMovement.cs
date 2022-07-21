@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight;
     private bool isWalking;
     public Animator playerAnimator;
+    public Stats stats;
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +79,10 @@ public class PlayerMovement : MonoBehaviour
         {
             onGround = true;
             GetComponent<Rigidbody2D>().AddForce(Vector3.up, ForceMode2D.Force);
+        }
+        if (collision.gameObject.tag == "spikes")
+        {
+            stats.health = 0;
         }
     }
 }
