@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossAI : MonoBehaviour
 {
     //Fields
-    public int health = 20;
+    public int health;
     public Transform player, self;
     private bool attacking = false;
     [SerializeField] private EnemyControl ac;
@@ -15,6 +15,7 @@ public class BossAI : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        health = 20;
         bound = GameObject.FindWithTag("bossbound").transform;
         player = GameObject.FindWithTag("Player").transform;
         startPos = self.transform.position;
