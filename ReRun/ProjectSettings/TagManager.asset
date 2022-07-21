@@ -15,6 +15,7 @@ TagManager:
   - Heart
   - spikes
   - enemy
+  - bossbound
   layers:
   - Default
   - TransparentFX

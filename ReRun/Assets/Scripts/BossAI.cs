@@ -9,11 +9,15 @@ public class BossAI : MonoBehaviour
     public Transform player, self;
     private bool attacking = false;
     [SerializeField] private EnemyControl ac;
+    [SerializeField] private Transform bound;
+    private Vector3 startPos;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        bound = GameObject.FindWithTag("bossbound").transform;
         player = GameObject.FindWithTag("Player").transform;
+        startPos = self.transform.position;
     }
 
     // Update is called once per frame
@@ -21,7 +25,7 @@ public class BossAI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
 
-        if (player.position.x - self.position.x < 10)
+        if (self.position.x > bound.position.x && bound.position.x - player.position.x < 0)
         {
 
             if (Mathf.Abs(self.position.x - player.position.x) > 3f && !attacking)
