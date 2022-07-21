@@ -3323,9 +3323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769500659121156204, guid: cd192d7877e1d09449762ca9661915d5, type: 3}
       propertyPath: m_text
-      value: 'Press E + direction[WASD]
-
-        to teleport'
+      value: "Press space against a wall \nto walljump"
       objectReference: {fileID: 0}
     - target: {fileID: 3066324547329849015, guid: cd192d7877e1d09449762ca9661915d5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3410,6 +3408,14 @@ PrefabInstance:
     - target: {fileID: 3066324549124741658, guid: cd192d7877e1d09449762ca9661915d5, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3066324549304479430, guid: cd192d7877e1d09449762ca9661915d5, type: 3}
+      propertyPath: m_text
+      value: "Press space to jump \nTwice to double jump"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341109165014846130, guid: cd192d7877e1d09449762ca9661915d5, type: 3}
+      propertyPath: m_Name
+      value: Walljump
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd192d7877e1d09449762ca9661915d5, type: 3}
