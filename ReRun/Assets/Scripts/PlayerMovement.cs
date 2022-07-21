@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private bool onGround;
     private bool facingRight;
+    private bool isWalking;
+    public Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -42,10 +44,21 @@ public class PlayerMovement : MonoBehaviour
         {
             jump();
         }
+        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
+            isWalking = false;
+        }
+
+        if (isWalking) {
+            playerAnimator.SetBool("isWalking", true);
+        }
+        else {
+            playerAnimator.SetBool("isWalking", false);
+        }
     }
 
     private IEnumerator move(Vector3 dir)
     {
+        isWalking = true;
         dir /= moveMult;
         Vector3 target = player.position + dir;
         player.position = Vector3.Lerp(player.position, target, duration * Time.deltaTime);
