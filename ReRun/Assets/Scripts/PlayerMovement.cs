@@ -12,10 +12,12 @@ public class PlayerMovement : MonoBehaviour
     public bool isWalking;
     public Animator playerAnimator;
     public Stats stats;
+    [SerializeField] private bool dJump;
 
     // Start is called before the first frame update
     void Start()
     {
+        dJump = false;
         player = transform;
         facingRight = true;
         onGround = true;
@@ -44,9 +46,18 @@ public class PlayerMovement : MonoBehaviour
                 facingRight = false;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space) && onGround)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            jump();
+            if (dJump && !onGround)
+            {
+                dJump = false;
+                jump();
+            }
+            if (onGround)
+            {
+                onGround = false;
+                jump();
+            }
         }
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
@@ -70,12 +81,11 @@ public class PlayerMovement : MonoBehaviour
         dir /= moveMult;
         Vector3 target = transform.position + dir;
         Debug.Log(target);
-        transform.position = Vector3.Lerp(transform.position, target, duration*Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, target, duration * Time.deltaTime);
         yield return null;
     }
     private void jump()
     {
-        onGround = false;
         GetComponent<Rigidbody2D>().AddForce(Vector3.up * 7, ForceMode2D.Impulse);
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -83,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "ground")
         {
             onGround = true;
+            dJump = true;
             GetComponent<Rigidbody2D>().AddForce(Vector3.up, ForceMode2D.Force);
         }
         if (collision.gameObject.tag == "spikes")

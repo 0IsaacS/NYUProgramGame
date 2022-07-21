@@ -16,6 +16,7 @@ TagManager:
   - spikes
   - enemy
   - bossbound
+  - negative
   layers:
   - Default
   - TransparentFX
