@@ -9,6 +9,7 @@ public class Stats : MonoBehaviour
     public GenerateLevel gl;
     public HealthUI hUI;
     public GameObject gameOverScreen;
+    private bool isInvincible = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +34,12 @@ public class Stats : MonoBehaviour
     }
     void takeDamage()
     {
-        health--;
-        hUI.updateHealth();
+        if (!isInvincible)
+        {
+            health--;
+            hUI.updateHealth();
+            StartCoroutine(tempInvincibility(1f));
+        }
     }
     void heal()
     {
@@ -73,5 +78,11 @@ public class Stats : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         Time.timeScale = 0;
+    }
+    IEnumerator tempInvincibility(float seconds)
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(seconds);
+        isInvincible = false;
     }
 }

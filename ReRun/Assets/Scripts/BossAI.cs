@@ -25,16 +25,25 @@ public class BossAI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
 
+        if (player.position.x < self.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
         if (self.position.x > bound.position.x && bound.position.x - player.position.x < 0)
         {
 
-            if (Mathf.Abs(self.position.x - player.position.x) > 3f && !attacking)
+            if ((Mathf.Abs(self.position.x - player.position.x) > 3f || Mathf.Abs(self.position.y - player.position.y) > 0.5f) && !attacking)
             {
                 StartCoroutine(moveToPlayer());
             }
             else
             {
-                attack();
+                StartCoroutine(attack());
             }
 
         }
@@ -49,10 +58,11 @@ public class BossAI : MonoBehaviour
         self.position = Vector3.Lerp(self.position, player.position, 0.5f * Time.deltaTime);
         yield return null;
     }
-    void attack()
+    IEnumerator attack()
     {
         attacking = true;
         ac.Attack();
         attacking = false;
+        yield return null;
     }
 }
