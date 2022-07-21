@@ -13,6 +13,7 @@ public class Stats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         gl = GameObject.Find("GameManager").GetComponent<GenerateLevel>();
         hUI = GameObject.FindWithTag("HeartManager").GetComponent<HealthUI>();
         hUI.updateHealth();
@@ -53,6 +54,13 @@ public class Stats : MonoBehaviour
                 heal();
             }
             Destroy(collision.gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            takeDamage();
         }
     }
     void die()
