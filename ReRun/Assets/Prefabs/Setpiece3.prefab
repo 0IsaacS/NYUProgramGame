@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xLength: 34.6
-  hasPowerUp: 0
 --- !u!1 &5582098169993698093
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +319,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -24, y: 0, z: 0}
   m_Size: {x: 39, y: 1, z: 1}
-  m_TileAnchor: {x: 3.93, y: 1.17, z: 0}
+  m_TileAnchor: {x: 7.63, y: 1.17, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
@@ -380,7 +379,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 100.24, y: 100, z: 100}
+  m_ChunkCullingBounds: {x: 100, y: 100, z: 100}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0

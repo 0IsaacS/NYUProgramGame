@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xLength: 2.8
-  hasPowerUp: 0
 --- !u!1 &8109776796041995877
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +263,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -9, y: -3, z: 0}
   m_Size: {x: 9, y: 9, z: 1}
-  m_TileAnchor: {x: 4.96, y: 0.5, z: 0}
+  m_TileAnchor: {x: 9.06, y: -0.4, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
