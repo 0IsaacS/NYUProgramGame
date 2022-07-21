@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: 204801973887209345}
   - {fileID: 2068061835047262710}
   - {fileID: 4123271542142534830}
+  self: {fileID: 5458416439466803302}
 --- !u!114 &5458416439466803302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,9 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4cc91a88fbd654493ab01a5c9597a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
   player: {fileID: 0}
   self: {fileID: 6609811643818395465}
-  ac: {fileID: 2068061835047262710}
+  ac: {fileID: 378931597188427758}
 --- !u!1 &1747402444121266868
 GameObject:
   m_ObjectHideFlags: 0

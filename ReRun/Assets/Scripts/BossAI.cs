@@ -5,9 +5,10 @@ using UnityEngine;
 public class BossAI : MonoBehaviour
 {
     //Fields
+    public int health = 5;
     public Transform player, self;
     private bool attacking = false;
-    [SerializeField] private EnemyAnimationControl ac;
+    [SerializeField] private EnemyControl ac;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +29,16 @@ public class BossAI : MonoBehaviour
         {
             attack();
         }
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator moveToPlayer()
     {
-        self.position = Vector3.Lerp(self.position, player.position, 2 * Time.deltaTime);
+        self.position = Vector3.Lerp(self.position, player.position, 0.5f * Time.deltaTime);
         yield return null;
     }
     void attack()
