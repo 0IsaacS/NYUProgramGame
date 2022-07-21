@@ -3323,7 +3323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769500659121156204, guid: cd192d7877e1d09449762ca9661915d5, type: 3}
       propertyPath: m_text
-      value: "Press space against a wall \nto walljump"
+      value: Press space against a wall to walljump
       objectReference: {fileID: 0}
     - target: {fileID: 3066324547329849015, guid: cd192d7877e1d09449762ca9661915d5, type: 3}
       propertyPath: m_LocalPosition.x
