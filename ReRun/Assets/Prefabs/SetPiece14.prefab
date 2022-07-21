@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7810605122008457902}
+  - component: {fileID: 1150305276898791383}
   m_Layer: 0
   m_Name: SetPiece14
-  m_TagString: Untagged
+  m_TagString: tall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1150305276898791383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485531542886544880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0aece2dce457e40bedcc310f5a7e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xLength: 24.5
+  hasPowerUp: 0
 --- !u!1 &4970550213690946862
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +60,7 @@ GameObject:
   - component: {fileID: 6154925814840083801}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
