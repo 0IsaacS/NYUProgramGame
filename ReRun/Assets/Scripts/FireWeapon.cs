@@ -10,6 +10,7 @@ public class FireWeapon : MonoBehaviour
     [SerializeField] private Transform firePoint;
     public PlayerMovement player;
     public bool hasFired;
+    float waitLength = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,18 @@ public class FireWeapon : MonoBehaviour
 
     IEnumerator fire()
     {
-        float waitLength = 0;
+        playerAnimator.SetBool("isAttacking", true);
+        hasFired = true;
+        yield return new WaitForSeconds(0.1f);
+        int index = (int)Random.Range(0, weaponPrefab.Length);
+        Instantiate(weaponPrefab[index], firePoint.position, player.transform.rotation);
+        yield return new WaitForSeconds(waitLength);
+        hasFired = false;
+        playerAnimator.SetBool("isAttacking", false);
+    }
+
+    void rollWaitLength()
+    {
         bool term = false;
         foreach (AnimationClip clip in playerAnimator.runtimeAnimatorController.animationClips)
         {
@@ -46,14 +58,5 @@ public class FireWeapon : MonoBehaviour
                 break;
             }
         }
-
-        playerAnimator.SetBool("isAttacking", true);
-        hasFired = true;
-        yield return new WaitForSeconds(0.1f);
-        int index = (int)Random.Range(0, weaponPrefab.Length);
-        Instantiate(weaponPrefab[index], firePoint.position, player.transform.rotation);
-        yield return new WaitForSeconds(waitLength);
-        hasFired = false;
-        playerAnimator.SetBool("isAttacking", false);
     }
 }
