@@ -9,8 +9,9 @@ public class HealthUI : MonoBehaviour
     public GameObject[] hearts;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        gameObject.layer = 1;
         st = GameObject.FindWithTag("Player").GetComponent<Stats>();
         hearts = GameObject.FindGameObjectsWithTag("Heart");
     }
