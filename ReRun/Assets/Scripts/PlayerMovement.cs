@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             if (dJump && !onGround)
             {
                 dJump = false;
-                jump();
+                jump(4);
             }
             if (onGround)
             {
@@ -86,6 +86,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void jump()
     {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
+        GetComponent<Rigidbody2D>().AddForce(Vector3.up * 7, ForceMode2D.Impulse);
+    }
+    private void jump(float power)
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
         GetComponent<Rigidbody2D>().AddForce(Vector3.up * 7, ForceMode2D.Impulse);
     }
     private void OnCollisionEnter2D(Collision2D collision)
