@@ -11,6 +11,8 @@ public class BossAI : MonoBehaviour
     [SerializeField] private EnemyControl ac;
     [SerializeField] private Transform bound;
     private Vector3 startPos;
+    public GameObject bossFightBGM;
+    public GameObject normalBGM;
 
     // Start is called before the first frame update
     void Awake()
@@ -19,6 +21,7 @@ public class BossAI : MonoBehaviour
         bound = GameObject.FindWithTag("bossbound").transform;
         player = GameObject.FindWithTag("Player").transform;
         startPos = self.transform.position;
+        bossFightBGM.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,12 +53,15 @@ public class BossAI : MonoBehaviour
         }
         if (health <= 0)
         {
+            bossFightBGM.gameObject.SetActive(true);
             Destroy(gameObject);
         }
     }
 
     IEnumerator moveToPlayer()
     {
+        normalBGM.gameObject.SetActive(false);
+        bossFightBGM.gameObject.SetActive(true);
         self.position = Vector3.Lerp(self.position, player.position, 0.5f * Time.deltaTime);
         yield return null;
     }
