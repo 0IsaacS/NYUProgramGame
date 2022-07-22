@@ -14,7 +14,7 @@ public class BossAI : MonoBehaviour
     private Vector3 startPos;
     public GameObject bossFightBGM;
     public GameObject normalBGM;
-    public GameObject menuBGM;
+    public GameObject menuBGM, winScreen;
     private bool isInBossFight;
 
     // Start is called before the first frame update
@@ -35,13 +35,14 @@ public class BossAI : MonoBehaviour
     {
         // if ! menu scene running..
         Scene scene = SceneManager.GetActiveScene();
-        Debug.Log(scene.name);
-        if(scene.name == "MenuScene") {
+        if (scene.name == "MenuScene")
+        {
             normalBGM.gameObject.SetActive(false);
             menuBGM.gameObject.SetActive(true);
         }
 
-        else if(!isInBossFight) {
+        else if (!isInBossFight)
+        {
             menuBGM.gameObject.SetActive(false);
             normalBGM.gameObject.SetActive(true);
         }
@@ -72,6 +73,7 @@ public class BossAI : MonoBehaviour
         }
         if (health <= 0)
         {
+            StartCoroutine(Win());
             bossFightBGM.gameObject.SetActive(false);
             Destroy(gameObject);
         }
@@ -91,5 +93,10 @@ public class BossAI : MonoBehaviour
         ac.Attack();
         attacking = false;
         yield return null;
+    }
+    private IEnumerator Win()
+    {
+        yield return null;
+        winScreen.SetActive(true);
     }
 }

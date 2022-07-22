@@ -48,7 +48,7 @@ public class GenerateLevel : MonoBehaviour
         SetpieceInfo lastInfo = lastPiece.GetComponent<SetpieceInfo>();
         SetpieceInfo spawnInfo = pieceToSpawn.GetComponent<SetpieceInfo>();
 
-        return Instantiate(pieceToSpawn, lastPos + new Vector2(lastInfo.xLength / 2 + spawnInfo.xLength / 2 + Random.Range(2f, 7f), Random.Range(-3f, 3f)), Quaternion.identity);
+        return Instantiate(pieceToSpawn, lastPos + new Vector2(lastInfo.xLength / 2 + spawnInfo.xLength / 2 + Random.Range(3f, 7f), Random.Range(-3f, 3f)), Quaternion.identity);
     }
     private void spawnPowerUp(GameObject spawn, GameObject last)
     {
