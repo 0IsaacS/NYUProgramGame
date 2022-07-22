@@ -11,6 +11,8 @@ public class Stats : MonoBehaviour
     public GameObject gameOverScreen;
     private bool isInvincible = false;
     [SerializeField] private FireWeapon selfFire;
+    public AudioSource playerAudio;
+    public AudioClip onHitSoundEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class Stats : MonoBehaviour
         gl = GameObject.Find("GameManager").GetComponent<GenerateLevel>();
         hUI = GameObject.FindWithTag("HeartManager").GetComponent<HealthUI>();
         hUI.updateHealth();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class Stats : MonoBehaviour
         if (!isInvincible)
         {
             health--;
+            playerAudio.PlayOneShot(onHitSoundEffect);
             hUI.updateHealth();
             StartCoroutine(tempInvincibility(1f));
         }

@@ -458,6 +458,10 @@ PrefabInstance:
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1828607596}
+    - target: {fileID: -9184587668591715249, guid: 246f053c8dbba4b47b0bfd2122f150e5, type: 3}
+      propertyPath: onHitSoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d694133a20f20b45be79b44a6cc5476, type: 3}
     - target: {fileID: 20431432585063441, guid: 246f053c8dbba4b47b0bfd2122f150e5, type: 3}
       propertyPath: m_GravityScale
       value: 1.3
