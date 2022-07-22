@@ -12,7 +12,7 @@ public class GenerateLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        piecesToGenerate = 12; //for testing and stuff
+        piecesToGenerate = 16; //for testing and stuff
         Generate(piecesToGenerate);
     }
 
