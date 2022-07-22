@@ -19,6 +19,7 @@ TagManager:
   - negative
   - RapidFire
   - playerbound
+  - WinScreen
   layers:
   - Default
   - TransparentFX

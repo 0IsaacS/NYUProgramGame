@@ -20,6 +20,9 @@ public class BossAI : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        winScreen = GameObject.FindWithTag("WinScreen");
+        winScreen.SetActive(false);
+
         health = 20;
         isInBossFight = false;
         bound = GameObject.FindWithTag("bossbound").transform;
