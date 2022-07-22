@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7121662974088047239}
   - component: {fileID: -917053579531866428}
   - component: {fileID: 5560878256236712136}
-  - component: {fileID: 922408250410882828}
+  - component: {fileID: 1879413258303346116}
   m_Layer: 0
   m_Name: AxeGoblin
   m_TagString: enemy
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566406095691607508}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 6255919805420462398}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!61 &-917053579531866428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &922408250410882828
+--- !u!114 &1879413258303346116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1566406095691607508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8d2f8ca2a1798941800db3d80985477, type: 3}
+  m_Script: {fileID: 11500000, guid: fa32f774bd7dd724593dc03d15d76c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyParts:
@@ -103,7 +103,6 @@ MonoBehaviour:
   - {fileID: 419477349}
   - {fileID: 479486116}
   - {fileID: 1967517216}
-  self: {fileID: 0}
 --- !u!1 &2227737508678611328
 GameObject:
   m_ObjectHideFlags: 0
