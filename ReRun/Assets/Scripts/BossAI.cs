@@ -36,14 +36,16 @@ public class BossAI : MonoBehaviour
         // if ! menu scene running..
         Scene scene = SceneManager.GetActiveScene();
         Debug.Log(scene.name);
-        if(scene.name == "MenuScene") {
+        if(scene.name == "MenuScene" || player == null) {
             normalBGM.gameObject.SetActive(false);
             menuBGM.gameObject.SetActive(true);
+            bossFightBGM.gameObject.SetActive(false);
         }
 
         else if(!isInBossFight) {
             menuBGM.gameObject.SetActive(false);
             normalBGM.gameObject.SetActive(true);
+            bossFightBGM.gameObject.SetActive(false);
         }
 
         player = GameObject.FindWithTag("Player").transform;
