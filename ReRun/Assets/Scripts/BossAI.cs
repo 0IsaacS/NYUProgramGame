@@ -33,11 +33,9 @@ public class BossAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if ! menu scene running..
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "MenuScene")
+        if (scene.name == "MenuScene" || player == null)
         {
-        if(scene.name == "MenuScene" || player == null) {
             normalBGM.gameObject.SetActive(false);
             menuBGM.gameObject.SetActive(true);
             bossFightBGM.gameObject.SetActive(false);
