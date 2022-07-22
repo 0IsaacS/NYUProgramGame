@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossAI : MonoBehaviour
 {
@@ -11,19 +12,40 @@ public class BossAI : MonoBehaviour
     [SerializeField] private EnemyControl ac;
     [SerializeField] private Transform bound;
     private Vector3 startPos;
+    public GameObject bossFightBGM;
+    public GameObject normalBGM;
+    public GameObject menuBGM;
+    private bool isInBossFight;
 
     // Start is called before the first frame update
     void Awake()
     {
         health = 20;
+        isInBossFight = false;
         bound = GameObject.FindWithTag("bossbound").transform;
         player = GameObject.FindWithTag("Player").transform;
         startPos = self.transform.position;
+        bossFightBGM.gameObject.SetActive(false);
+        menuBGM.gameObject.SetActive(false);
+        normalBGM.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // if ! menu scene running..
+        Scene scene = SceneManager.GetActiveScene();
+        Debug.Log(scene.name);
+        if(scene.name == "MenuScene") {
+            normalBGM.gameObject.SetActive(false);
+            menuBGM.gameObject.SetActive(true);
+        }
+
+        else if(!isInBossFight) {
+            menuBGM.gameObject.SetActive(false);
+            normalBGM.gameObject.SetActive(true);
+        }
+
         player = GameObject.FindWithTag("Player").transform;
 
         if (player.position.x < self.position.x)
@@ -50,12 +72,16 @@ public class BossAI : MonoBehaviour
         }
         if (health <= 0)
         {
+            bossFightBGM.gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }
 
     IEnumerator moveToPlayer()
     {
+        normalBGM.gameObject.SetActive(false);
+        bossFightBGM.gameObject.SetActive(true);
+        isInBossFight = false;
         self.position = Vector3.Lerp(self.position, player.position, 0.5f * Time.deltaTime);
         yield return null;
     }

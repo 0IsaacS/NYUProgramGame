@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public Stats stats;
     [SerializeField] private bool dJump;
     public GameObject bossBound;
+    public AudioSource playerAudio;
+    public AudioClip jumpSoundEffect;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         onGround = true;
         gameObject.layer = 1; //move this to another script later
         Time.timeScale = 1;
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -94,11 +97,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void jump()
     {
+        playerAudio.PlayOneShot(jumpSoundEffect);
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
         GetComponent<Rigidbody2D>().AddForce(Vector3.up * 7, ForceMode2D.Impulse);
     }
     private void jump(float power)
     {
+        playerAudio.PlayOneShot(jumpSoundEffect);
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
         GetComponent<Rigidbody2D>().AddForce(Vector3.up * 7, ForceMode2D.Impulse);
     }
