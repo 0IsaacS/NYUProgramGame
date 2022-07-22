@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/2D RPG Pixel Characters/Scenes/MenuScene.unity
-    guid: 0752dab67effb9e41abdb30b48a773ec
+    path: Assets/Scenes/MenuScene.unity
+    guid: 4f306382e35564ec4856449623b1d753
   - enabled: 1
     path: Assets/Scenes/LevelScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729

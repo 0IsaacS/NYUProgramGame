@@ -37,14 +37,17 @@ public class BossAI : MonoBehaviour
     void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (!isInBossFight) {
-            if (scene.name == "MenuScene" || player == null) {
+        if (!isInBossFight)
+        {
+            if (scene.name == "MenuScene" || player == null)
+            {
                 normalBGM.gameObject.SetActive(false);
                 menuBGM.gameObject.SetActive(true);
                 bossFightBGM.gameObject.SetActive(false);
             }
 
-            else {
+            else
+            {
                 menuBGM.gameObject.SetActive(false);
                 normalBGM.gameObject.SetActive(true);
                 bossFightBGM.gameObject.SetActive(false);
@@ -77,12 +80,12 @@ public class BossAI : MonoBehaviour
         }
         if (health <= 0)
         {
-            StartCoroutine(Win());
             isInBossFight = false;
             bossFightBGM.gameObject.SetActive(false);
-            Destroy(gameObject);
+            StartCoroutine(Win());
         }
-        if(player == null) {
+        if (player == null)
+        {
             isInBossFight = false;
             bossFightBGM.gameObject.SetActive(false);
         }
@@ -105,7 +108,9 @@ public class BossAI : MonoBehaviour
     }
     private IEnumerator Win()
     {
-        yield return null;
         winScreen.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
+        Time.timeScale = 0;
     }
 }

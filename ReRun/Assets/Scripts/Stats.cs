@@ -24,7 +24,7 @@ public class Stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -gl.piecesToGenerate * 3)
+        if (transform.position.y < -gl.piecesToGenerate * 10)
         {
             health = 0;
         }
