@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3159760622243944352}
   m_Layer: 0
   m_Name: HalberdGoblin
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   - {fileID: 1215449454}
   - {fileID: 1600509201}
   - {fileID: 1317917697}
+  self: {fileID: 0}
 --- !u!1 &2227737508678611328
 GameObject:
   m_ObjectHideFlags: 0

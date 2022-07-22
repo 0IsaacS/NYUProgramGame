@@ -37,18 +37,18 @@ public class BossAI : MonoBehaviour
     void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "MenuScene" || player == null)
-        {
-            normalBGM.gameObject.SetActive(false);
-            menuBGM.gameObject.SetActive(true);
-            bossFightBGM.gameObject.SetActive(false);
-        }
+        if (!isInBossFight) {
+            if (scene.name == "MenuScene" || player == null) {
+                normalBGM.gameObject.SetActive(false);
+                menuBGM.gameObject.SetActive(true);
+                bossFightBGM.gameObject.SetActive(false);
+            }
 
-        else if (!isInBossFight)
-        {
-            menuBGM.gameObject.SetActive(false);
-            normalBGM.gameObject.SetActive(true);
-            bossFightBGM.gameObject.SetActive(false);
+            else {
+                menuBGM.gameObject.SetActive(false);
+                normalBGM.gameObject.SetActive(true);
+                bossFightBGM.gameObject.SetActive(false);
+            }
         }
 
         player = GameObject.FindWithTag("Player").transform;
@@ -78,6 +78,7 @@ public class BossAI : MonoBehaviour
         if (health <= 0)
         {
             StartCoroutine(Win());
+            isInBossFight = false;
             bossFightBGM.gameObject.SetActive(false);
             Destroy(gameObject);
         }
