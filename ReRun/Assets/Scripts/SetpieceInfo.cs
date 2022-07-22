@@ -7,6 +7,7 @@ public class SetpieceInfo : MonoBehaviour
     //Fields
     public float xLength;
     public bool hasPowerUp = false;
+    public bool canHaveEnemy;
 
     // Start is called before the first frame update
     void Awake()
