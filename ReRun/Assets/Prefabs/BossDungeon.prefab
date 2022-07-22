@@ -561,6 +561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xLength: 42
   hasPowerUp: 0
+  canHaveEnemy: 0
 --- !u!1 &1227495200230668476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,19 +2905,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609811643818395465, guid: 6a328d1a758d5074e923225562718050, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6609811643818395465, guid: 6a328d1a758d5074e923225562718050, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6609811643818395465, guid: 6a328d1a758d5074e923225562718050, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6609811643818395465, guid: 6a328d1a758d5074e923225562718050, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6609811643818395465, guid: 6a328d1a758d5074e923225562718050, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2924,7 +2925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609811643818395465, guid: 6a328d1a758d5074e923225562718050, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6609811643818395465, guid: 6a328d1a758d5074e923225562718050, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

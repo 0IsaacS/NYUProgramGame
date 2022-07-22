@@ -58,11 +58,11 @@ public class BossAI : MonoBehaviour
 
         if (player.position.x < self.position.x)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if (self.position.x > bound.position.x && bound.position.x - player.position.x < 0)
