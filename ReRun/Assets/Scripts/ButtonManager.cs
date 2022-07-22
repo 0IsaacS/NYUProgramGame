@@ -20,6 +20,5 @@ public class ButtonManager : MonoBehaviour
     public void gameOver()
     {
         SceneManager.LoadScene("MenuScene");
-        SceneManager.LoadScene("LevelScene", LoadSceneMode.Additive);
     }
 }

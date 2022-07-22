@@ -18,11 +18,7 @@ public class MonstersControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Mathf.Abs(transform.position.x - player.transform.position.x) > 3f || Mathf.Abs(transform.position.y - player.transform.position.y) > 0.5f) && !isAttacking)
-        {
-            ;
-        }
-        else
+        if (!((Mathf.Abs(transform.position.x - player.transform.position.x) > 3f || Mathf.Abs(transform.position.y - player.transform.position.y) > 0.5f) && !isAttacking))
         {
             StartCoroutine(Attack());
         }
