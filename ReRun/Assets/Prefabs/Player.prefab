@@ -108,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 11e84a571212ce74c998a432c94ccfdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,8 +134,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6077229697090576618}
   onGround: 0
+  isWalking: 0
   playerAnimator: {fileID: 0}
   stats: {fileID: -9184587668591715249}
+  dJump: 0
 --- !u!50 &20431432585063441
 Rigidbody2D:
   serializedVersion: 4
