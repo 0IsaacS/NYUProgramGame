@@ -9,23 +9,29 @@ public class MonstersControl : MonoBehaviour
     private bool isAttacking;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         isAttacking = false;
         player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
-    void Update() {
-        if ((Mathf.Abs(transform.position.x - player.transform.position.x) > 3f || Mathf.Abs(transform.position.y - player.transform.position.y) > 0.5f) && !isAttacking) {
+    void Update()
+    {
+        if ((Mathf.Abs(transform.position.x - player.transform.position.x) > 3f || Mathf.Abs(transform.position.y - player.transform.position.y) > 0.5f) && !isAttacking)
+        {
             ;
         }
-        else {
+        else
+        {
             StartCoroutine(Attack());
         }
     }
 
-    public IEnumerator Attack() {
-        for (int i = 0; i < enemyParts.Length; i++) {
+    public IEnumerator Attack()
+    {
+        for (int i = 0; i < enemyParts.Length; i++)
+        {
             enemyParts[i].Attack();
         }
         isAttacking = true;
@@ -33,16 +39,20 @@ public class MonstersControl : MonoBehaviour
         isAttacking = false;
     }
 
-    public IEnumerator OnHit() {
-        for (int i = 0; i < enemyParts.Length; i++) {
+    public IEnumerator OnHit()
+    {
+        for (int i = 0; i < enemyParts.Length; i++)
+        {
             enemyParts[i].OnHit();
         }
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Projectile")) {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
             StartCoroutine(OnHit());
         }
     }
