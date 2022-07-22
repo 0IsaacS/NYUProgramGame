@@ -129,6 +129,7 @@ MonoBehaviour:
   bossFightBGM: {fileID: 8932625568984911184}
   normalBGM: {fileID: 7899955788016046394}
   menuBGM: {fileID: 6921600105506435368}
+  winScreen: {fileID: 0}
 --- !u!1 &1747402444121266868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1368196437682769695
 Transform:
   m_ObjectHideFlags: 0
@@ -1396,7 +1397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8444980427756510207
 Transform:
   m_ObjectHideFlags: 0
@@ -1564,7 +1565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6955004767050516873, guid: c6df8c87d083e164d8578ad6a5ea2511, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8183489458564594295, guid: c6df8c87d083e164d8578ad6a5ea2511, type: 3}
       propertyPath: Loop

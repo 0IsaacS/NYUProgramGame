@@ -15,7 +15,7 @@ public class BossAI : MonoBehaviour
     public GameObject bossFightBGM;
     public GameObject normalBGM;
     public GameObject menuBGM, winScreen;
-    private bool isInBossFight;
+    public bool isInBossFight;
 
     // Start is called before the first frame update
     void Awake()
@@ -82,13 +82,17 @@ public class BossAI : MonoBehaviour
             bossFightBGM.gameObject.SetActive(false);
             Destroy(gameObject);
         }
+        if(player == null) {
+            isInBossFight = false;
+            bossFightBGM.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator moveToPlayer()
     {
         normalBGM.gameObject.SetActive(false);
         bossFightBGM.gameObject.SetActive(true);
-        isInBossFight = false;
+        isInBossFight = true;
         self.position = Vector3.Lerp(self.position, player.position, 0.5f * Time.deltaTime);
         yield return null;
     }
