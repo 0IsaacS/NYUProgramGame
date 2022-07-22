@@ -10,6 +10,7 @@ public class Stats : MonoBehaviour
     public HealthUI hUI;
     public GameObject gameOverScreen;
     private bool isInvincible = false;
+    [SerializeField] private FireWeapon selfFire;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,14 @@ public class Stats : MonoBehaviour
             }
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "RapidFire")
+        {
+            if (!selfFire.rapidFire)
+            {
+                StartCoroutine(tempRapidFire());
+                Destroy(collision.gameObject);
+            }
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -84,5 +93,12 @@ public class Stats : MonoBehaviour
         isInvincible = true;
         yield return new WaitForSeconds(seconds);
         isInvincible = false;
+    }
+
+    IEnumerator tempRapidFire()
+    {
+        selfFire.rapidFire = true;
+        yield return new WaitForSeconds(7);
+        selfFire.rapidFire = false;
     }
 }

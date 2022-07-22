@@ -6,13 +6,13 @@ public class GenerateLevel : MonoBehaviour
 {
     //Fields
     public List<GameObject> setpiecePrefabs, bossAreaPrefabs;
-    public GameObject spawnPlatform, healthUpPrefab;
+    public GameObject spawnPlatform, healthUpPrefab, RapidFirePrefab;
     public int piecesToGenerate;
 
     // Start is called before the first frame update
     void Start()
     {
-        piecesToGenerate = 12; //for testing and stuff
+        piecesToGenerate = 16; //for testing and stuff
         Generate(piecesToGenerate);
     }
 
@@ -28,26 +28,13 @@ public class GenerateLevel : MonoBehaviour
         for (int i = 0; i < numPieces; i++)
         {
             last = spawnPiece(setpiecePrefabs[Random.Range(0, setpiecePrefabs.Count)], last);
-            SetpieceInfo si = last.GetComponent<SetpieceInfo>();
-            if (Random.Range(0.0f, 1.0f) < 0.25f && !si.hasPowerUp) //1 in 4 chance to sapwn
+            if (Random.Range(0.0f, 1.0f) < 0.25f) //1 in 4 chance to sapwn
             {
-                switch (last.tag)
-                {
-                    case "short":
-                        Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, 3, 0), Quaternion.identity);
-                        break;
-                    case "tall":
-                        Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
-                        break;
-                    case "negative":
-                        Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, -3, 0), Quaternion.identity);
-                        break;
-                    default:
-                        Instantiate(healthUpPrefab, last.transform.position + new Vector3(0, 4, 0), Quaternion.identity);
-                        break;
-                }
-                si.hasPowerUp = true;
-
+                spawnPowerUp(healthUpPrefab, last);
+            }
+            if (Random.Range(0.0f, 1.0f) < 0.20f) //1 in 5 chance to sapwn
+            {
+                spawnPowerUp(RapidFirePrefab, last);
             }
         }
 
@@ -62,5 +49,27 @@ public class GenerateLevel : MonoBehaviour
         SetpieceInfo spawnInfo = pieceToSpawn.GetComponent<SetpieceInfo>();
 
         return Instantiate(pieceToSpawn, lastPos + new Vector2(lastInfo.xLength / 2 + spawnInfo.xLength / 2 + Random.Range(2f, 7f), Random.Range(-3f, 3f)), Quaternion.identity);
+    }
+    private void spawnPowerUp(GameObject spawn, GameObject last)
+    {
+        if (!last.GetComponent<SetpieceInfo>().hasPowerUp)
+        {
+            switch (last.tag)
+            {
+                case "short":
+                    Instantiate(spawn, last.transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+                    break;
+                case "tall":
+                    Instantiate(spawn, last.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
+                    break;
+                case "negative":
+                    Instantiate(spawn, last.transform.position + new Vector3(0, -3, 0), Quaternion.identity);
+                    break;
+                default:
+                    Instantiate(spawn, last.transform.position + new Vector3(0, 4, 0), Quaternion.identity);
+                    break;
+            }
+            last.GetComponent<SetpieceInfo>().hasPowerUp = true;
+        }
     }
 }

@@ -13,10 +13,15 @@ public class PlayerMovement : MonoBehaviour
     public Animator playerAnimator;
     public Stats stats;
     [SerializeField] private bool dJump;
+    public GameObject bossBound;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
+        yield return new WaitForSeconds(0.1f);
+
+        bossBound = GameObject.FindWithTag("playerbound");
+        bossBound.GetComponent<BoxCollider2D>().enabled = false;
         dJump = false;
         player = transform;
         facingRight = true;
@@ -28,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (bossBound.transform.position.x + 2 < player.position.x)
+        {
+            bossBound.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
         if (Input.GetKey(KeyCode.D))
         {
             StartCoroutine(move(Vector3.right));
@@ -76,11 +86,9 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator move(Vector3 dir)
     {
-        Debug.Log("Is moving");
         isWalking = true;
         dir /= moveMult;
         Vector3 target = transform.position + dir;
-        Debug.Log(target);
         transform.position = Vector3.Lerp(transform.position, target, duration * Time.deltaTime);
         yield return null;
     }

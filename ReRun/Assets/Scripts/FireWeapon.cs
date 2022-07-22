@@ -9,18 +9,29 @@ public class FireWeapon : MonoBehaviour
     public Animator playerAnimator;
     [SerializeField] private Transform firePoint;
     public PlayerMovement player;
-    public bool hasFired;
+    public bool hasFired, rapidFire;
     float waitLength = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        rollWaitLength();
         hasFired = false;
+        rapidFire = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (rapidFire && waitLength != 0)
+        {
+            waitLength = 0;
+        }
+        else if (!rapidFire)
+        {
+            rollWaitLength();
+        }
+
         if (Input.GetKeyDown(KeyCode.F) && !hasFired)
         {
             StartCoroutine(fire());

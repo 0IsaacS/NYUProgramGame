@@ -451,6 +451,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -9184587668591715249, guid: 246f053c8dbba4b47b0bfd2122f150e5, type: 3}
+      propertyPath: selfFire
+      value: 
+      objectReference: {fileID: 852686753}
+    - target: {fileID: -9184587668591715249, guid: 246f053c8dbba4b47b0bfd2122f150e5, type: 3}
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1828607596}
@@ -1154,6 +1158,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5751451548599310489, guid: 246f053c8dbba4b47b0bfd2122f150e5, type: 3}
   m_PrefabInstance: {fileID: 488425410}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &852686753 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 46453761500864468, guid: 246f053c8dbba4b47b0bfd2122f150e5, type: 3}
+  m_PrefabInstance: {fileID: 488425410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852686752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d1fdb41ed325744a2260323a32192f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &852686755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6077229697090576618, guid: 246f053c8dbba4b47b0bfd2122f150e5, type: 3}
@@ -2812,6 +2827,7 @@ MonoBehaviour:
   - {fileID: 5310594309719620954, guid: ea96e476b7d644877b471d81e85b4e21, type: 3}
   spawnPlatform: {fileID: 599701349}
   healthUpPrefab: {fileID: 4898272811603236991, guid: 51ac9c05b7c3de64d96e35a2d0b1b12c, type: 3}
+  RapidFirePrefab: {fileID: 74236684923412258, guid: b27bfd95e7a36dc45a54c9db04d7e106, type: 3}
   piecesToGenerate: 3
 --- !u!1 &1950810952
 GameObject:
